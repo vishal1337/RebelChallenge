@@ -44,7 +44,7 @@ class UsersLocalDataSource private constructor(
     }
 
     override fun favoriteUser(user: User) {
-        appExecutors.diskIO.execute { usersDao.favoriteUser(user.userId, user.isFavorite) }
+        appExecutors.diskIO.execute { usersDao.favoriteUser(user.id, user.isFavorite) }
     }
 
     override fun saveUser(user: User) {

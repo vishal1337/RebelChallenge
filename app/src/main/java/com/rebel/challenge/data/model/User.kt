@@ -16,22 +16,22 @@ data class User @JvmOverloads constructor(
     @ColumnInfo(name = "website") var website: String = "",
     @ColumnInfo(name = "isFavorite") var isFavorite: Boolean = false,
     @PrimaryKey
-    @ColumnInfo(name = "userId")
-    var userId: String = UUID.randomUUID().toString()
+    @ColumnInfo(name = "id")
+    var id: String = UUID.randomUUID().toString()
 ) /*{
     constructor(name: String? = null,
                 username: String? = null,
                 email: String? = null,
                 phone: String? = null,
                 website: String? = null,
-                userId: String? = null
+                id: String? = null
     ) : this(
             name ?: "",
             username ?: "",
             email ?: "",
             phone ?: "",
             website ?: "",
-            userId ?: UUID.randomUUID().toString()
+            id ?: UUID.randomUUID().toString()
     )
 }*/
 

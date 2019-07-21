@@ -20,11 +20,11 @@ interface UsersDao {
     /**
      * Select a user by id.
      *
-     * @param userId the user id.
-     * @return the user with userId.
+     * @param id the user id.
+     * @return the user with id.
      */
-    @Query("SELECT * FROM Users WHERE userId = :userId")
-    fun getUserById(userId: String): User?
+    @Query("SELECT * FROM Users WHERE id = :id")
+    fun getUserById(id: String): User?
 
     /**
      * Insert a user in the database. If the user already exists, replace it.
@@ -49,16 +49,16 @@ interface UsersDao {
      * @param userId        id of the user
      * @param isFavorite    status to be updated
      */
-    @Query("UPDATE users SET isFavorite = :isFavorite WHERE userId = :userId")
-    fun favoriteUser(userId: String, isFavorite: Boolean)
+    @Query("UPDATE users SET isFavorite = :isFavorite WHERE id = :id")
+    fun favoriteUser(id: String, isFavorite: Boolean)
 
     /**
      * Delete a user by id.
      *
      * @return the number of users deleted. This should always be 1.
      */
-    @Query("DELETE FROM Users WHERE userId = :userId")
-    fun deleteUserById(userId: String): Int
+    @Query("DELETE FROM Users WHERE id = :id")
+    fun deleteUserById(id: String): Int
 
     /**
      * Delete all users.

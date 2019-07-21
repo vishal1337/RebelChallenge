@@ -181,10 +181,10 @@ class UsersRepository(
             website = user.website,
             isFavorite = user.isFavorite,
             //company = user.company,
-            userId = user.userId
+            id = user.id
         )
 
-        cachedUsers[cachedUser.userId] = cachedUser
+        cachedUsers[cachedUser.id] = cachedUser
         perform(cachedUser)
     }
 
