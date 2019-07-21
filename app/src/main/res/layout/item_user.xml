@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View.OnClickListener" />
+
+        <variable
+            name="user"
+            type="com.rebel.challenge.data.model.User" />
+
+        <variable
+            name="listener"
+            type="com.rebel.challenge.ui.home.users.view.UserItemUserActionsListener" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:id="@+id/tv_initial"
+            style="@style/TextAppearance.AppCompat.Large.Inverse"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:onClick="@{(view) -> listener.onUserClicked(user)}"
+            android:text="@{user.name}"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Vishal Choudhary" />
+
+        <!--<ImageButton
+            android:id="@+id/button_love"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:onClick="@{(view) -> listener.onUserFavoriteClicked(quote, view)}"
+            android:padding="8dp"
+            android:src="@{user.isFavorite ? @drawable/ic_bookmark_white_24dp : @drawable/ic_bookmark_border_white_24dp}"
+            app:layout_constraintBottom_toBottomOf="@id/tv_initial"
+            app:layout_constraintEnd_toEndOf="@id/tv_initial"
+            tools:src="@drawable/ic_bookmark_border_white_24dp" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
