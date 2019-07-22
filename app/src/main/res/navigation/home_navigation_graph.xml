@@ -13,7 +13,7 @@
 
     <fragment
             android:id="@+id/action_favorite"
-            android:name="com.rebel.challenge.ui.home.favorites.FavoritesFragment"
+            android:name="com.rebel.challenge.ui.home.favorites.view.FavoritesFragment"
             android:label="Favorites"
             tools:layout="@layout/fragment_favorites"/>
 

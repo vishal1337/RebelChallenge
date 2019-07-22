@@ -176,11 +176,11 @@ class UsersRepository(
             name = user.name,
             username = user.username,
             email = user.email,
-            //address = user.address,
+            address = user.address,
             phone = user.phone,
             website = user.website,
             isFavorite = user.isFavorite,
-            //company = user.company,
+            company = user.company,
             id = user.id
         )
 

@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.rebel.challenge.data.source.UsersRepository
 import com.rebel.challenge.mock.data.Injection
+import com.rebel.challenge.ui.home.favorites.FavoritesViewModel
 import com.rebel.challenge.ui.home.users.UsersViewModel
 
 /**
@@ -29,6 +30,9 @@ class ViewModelFactory private constructor(
                 isAssignableFrom(UsersViewModel::class.java) ->
                     UsersViewModel(application, usersRepository)
 
+                isAssignableFrom(FavoritesViewModel::class.java) ->
+                    FavoritesViewModel(application, usersRepository)
+
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }
@@ -42,8 +46,10 @@ class ViewModelFactory private constructor(
 
         fun getInstance(application: Application) =
             INSTANCE ?: synchronized(ViewModelFactory::class.java) {
-                INSTANCE ?: ViewModelFactory(application,
-                    Injection.provideUsersRepository(application.applicationContext))
+                INSTANCE ?: ViewModelFactory(
+                    application,
+                    Injection.provideUsersRepository(application.applicationContext)
+                )
                     .also { INSTANCE = it }
             }
 

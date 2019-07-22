@@ -1,0 +1,5 @@
+<resources>
+
+    <!-- If Map stops Loading replace this key with a new one -->
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">AIzaSyB4wO47jPkA5tQLL0N9UKUrg1uNMWzRMOY</string>
+</resources>

@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.rebel.challenge.data.model.User
 
 
@@ -11,7 +12,7 @@ import com.rebel.challenge.data.model.User
  * The Room Database that contains the User table.
  */
 @Database(entities = [User::class], version = 1, exportSchema = false)
-//@TypeConverters(Converters::class)
+@TypeConverters(Converters::class)
 abstract class UsersDatabase : RoomDatabase() {
 
     abstract fun userDao(): UsersDao

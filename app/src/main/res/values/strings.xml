@@ -2,5 +2,5 @@
     <string name="app_name">Rebel Challenge</string>
     <string name="menu_home">Home</string>
     <string name="menu_favorite">Favorites</string>
-    <string name="title_activity_user_location">Location</string>
+    <string name="title_activity_user_location">User Location</string>
 </resources>
